@@ -15,5 +15,13 @@ function imprimirNombreMayusculas(persona) {
     console.log(nombre)
 }
 
+function imprimirNombreEdad(persona){
+    var {nombre} = persona, {apellido} = persona, {edad} = persona
+    console.log(`Hola, mi nombre es ${nombre} ${apellido} y tengo ${edad} años`)
+}
+
+imprimirNombreEdad(marcial)
+imprimirNombreEdad(marco)
+
 //imprimirNombreMayusculas(marcial)
 //imprimirNombreMayusculas(marco)
