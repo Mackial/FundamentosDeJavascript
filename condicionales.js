@@ -38,12 +38,18 @@ function imprimirProfesiones(persona){
 
 imprimirProfesiones(sacha)
 
+const MAYORIA_DE_EDAD = 18
+
+function esMayor(persona){
+    //retona valores booleanos, true o false
+    return persona.edad >= mayoriaDeEdad
+}
+
 function mayoriaDeEdad(persona){
-    console.log(`${persona.nombre} `)
-    if (persona.edad >= 18) {
-        console.log('Es mayor de edad')
+    if (esMayor(persona)) {
+        console.log(`${persona.nombre} es mayor de edad`)
     } else {
-        console.log('Aun no cumple la mayoria de edad')
+        console.log(`${persona.nombre} Aun no cumple la mayoria de edad`)
     }
 }
 
