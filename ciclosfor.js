@@ -31,3 +31,16 @@ while (marcial.peso > META) {
 }
 
 console.log(`Pasaron ${dias} dias para que ${marcial.nombre} cumpliera la meta de pesar ${marcial.peso.toFixed(1)}kg`)
+
+
+var contador = 0
+
+const llueve = ( ) => Math.random() < 0.25
+
+do {
+    contador++
+} while (!llueve()) 
+
+if(contador>1) {palabra = 'veces'} else {palabra = 'vez'}
+
+console.log(`Fui a ver si llovia ${contador} ${palabra}`)
