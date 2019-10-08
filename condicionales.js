@@ -9,6 +9,17 @@ var sacha = {
     guitarrista: false,
     drone: true
 }
+var daniel = {
+    nombre: 'Daniel',
+    apellido: 'Baca',
+    edad: 13,
+    ingeniero: false,
+    cocinero: false,
+    cantante: false,
+    dj: false,
+    guitarrista: false,
+    drone: true
+}
 
 function imprimirProfesiones(persona){
     console.log(`${persona.nombre} es: `)
@@ -40,16 +51,39 @@ imprimirProfesiones(sacha)
 
 const MAYORIA_DE_EDAD = 18
 
+//Asignacion de una funcion a una variable
+var esMayor = function (persona) {
+    return persona.edad >= mayoriaDeEdad
+}
+//Otra forma de asignar una funcion a una variable usando la flecha
+//ARROE FUNCTION
+const esMayorEdad = (persona) => {
+    return persona.edad >= mayoriaDeEdad    
+}
+
+//ARROW simplificada y equivalente a la funcion de arriba
+const esMayorEdadD = ({edad}) => edad >= MAYORIA_DE_EDAD
+
+const esMenor = ({ edad }) => edad < MAYORIA_DE_EDAD
+
 function esMayor(persona){
     //retona valores booleanos, true o false
     return persona.edad >= mayoriaDeEdad
 }
 
 function mayoriaDeEdad(persona){
-    if (esMayor(persona)) {
+    if (esMayorEdadD(persona)) {
         console.log(`${persona.nombre} es mayor de edad`)
     } else {
         console.log(`${persona.nombre} Aun no cumple la mayoria de edad`)
+    }
+}
+
+const permitirAcceso = persona => {
+    if (!esMayorEdadD(persona)) {
+        console.log('ACCESO DENEGADO')
+    } else {
+        console.log('ACCESO PERMITIDO')
     }
 }
 
