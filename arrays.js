@@ -23,11 +23,17 @@ var paula = {
     apellido: 'Barros',
     altura: 1.76
 }
+//Condicion para el filtro
+const esAlta = ({altura}) => altura > 1.8
 
+const esBaja = ({altura}) => altura < 1.6
 
 var personas = [sacha, alan, martin, vicky, paula]
+// Filtrar los arrays
+var personasAltas = personas.filter(esAlta)
 
-for (var i = 0; i < personas.length; i++){
-    var persona = personas[i]
-    console.log(`${persona.nombre} mide ${persona.altura} mts`)
-}
+var personasBajitas = personas.filter(esBaja)
+
+//console.log(personasAltas)
+
+console.log(personasBajitas)
