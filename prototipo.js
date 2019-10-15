@@ -8,16 +8,13 @@ function Persona(nombre, apellido, edad, altura) {
 Persona.prototype.saludar = function() {
     console.log(`hola, me llamo ${this.nombre} ${this.apellido}`)
 }
-
 Persona.prototype.esAlto = function() {
-    if (this.altura >= 1.8) {
-        console.log(`${this.nombre} es una persona alta`)
-    }
+    return this.altura >= 1.8
 }
 
 
-var sacha = new Persona('Sacha', 'Lifszyc', 27, 172)
+var sacha = new Persona('Sacha', 'Lifszyc', 27, 1.72)
 var erika = new Persona('Erika', 'Luna', 24, 1.57)
 var marcial = new Persona('Marcial', 'Ambriz', 23, 1.82)
 
-sacha.saludar()
+//sacha.saludar()
