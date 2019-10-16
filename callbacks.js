@@ -1,12 +1,29 @@
 const API_URL = 'https://swapi.co/api/'
 const PEOPLE_URL = 'people/:id'
+const opts = { crossDomain: true }
                         //metodo replace, reemplaza una parte especifica de un
                         //string asignandole otra diferente
-const lukeUrl = `${API_URL}${PEOPLE_URL.replace(':id', 1)}`
-const opts = { crossDomain: true }
 
-const onResponse = function (luke) {
-    console.log(`Hola yo soy, ${luke.name}`)
+
+function obtenerPersonaje(id) {
+    return new Promise((resolve, reject) => {
+        const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
+        $
+        .get(url, opts, function (data) {
+            resolve(data)
+        })
+        .fail(() => {
+            console.log(`Sucedio un error. No se pudo obtener el personaje ${id}`)
+        })
+    })
+}
+    
+function onError(id) {
+    console.log(`Sucedio un error al obtener el personaje ${id}`)
 }
 
-$.get(lukeUrl, opts, onResponse)
+obtenerPersonaje(1).then(function (personaje) {
+        console.log(`El personaje 1 es ${personaje.name}`)
+    }).catch(onError)
+
+//callback en serie
